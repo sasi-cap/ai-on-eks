@@ -99,7 +99,7 @@ git clone https://github.com/awslabs/ai-on-eks.git
 |-----------|-------------|-------------|
 |`--repo-name`| ECR 저장소 이름 |dlc-slurmd|
 |`--tag`|이미지 태그 |25.11.1-ubuntu24.04|
-|`--region`| ECR 저장소의 AWS 리전 | AWS CLI 구성에서 추론되거나 `us-west-2`로 설정|
+|`--region`| ECR 저장소의 AWS 리전 | AWS CLI 구성에서 추론되거나 `eu-west-2`로 설정|
 |`--skip-build`| ECR에 이미 있는 기존 이미지를 사용하는 경우 설정 | `false`|
 |`--skip-setup`| 이전에 `blueprints/training/slinky-slurm/slurm-values.yaml` 파일을 생성한 경우 설정 |`false`|
 |`--help`| 플래그 옵션 보기 |`false`|
@@ -176,7 +176,7 @@ service/mariadb               ClusterIP      172.20.165.187   <none>            
 service/mariadb-internal      ClusterIP      None             <none>                                                                       3306/TCP       9m12s
 service/slurm-accounting      ClusterIP      172.20.206.252   <none>                                                                       6819/TCP       9m6s
 service/slurm-controller      ClusterIP      172.20.22.142    <none>                                                                       6817/TCP       9m5s
-service/slurm-login-slinky    LoadBalancer   172.20.155.154   k8s-slurm-slurmlog-d3c664afd2-5c3621e9c562ee2d.elb.us-west-2.amazonaws.com   22:31787/TCP   9m5s
+service/slurm-login-slinky    LoadBalancer   172.20.155.154   k8s-slurm-slurmlog-d3c664afd2-5c3621e9c562ee2d.elb.eu-west-2.amazonaws.com   22:31787/TCP   9m5s
 service/slurm-restapi         ClusterIP      172.20.130.229   <none>                                                                       6820/TCP       9m5s
 service/slurm-workers-slurm   ClusterIP      None             <none>                                                                       6818/TCP       9m5s
 

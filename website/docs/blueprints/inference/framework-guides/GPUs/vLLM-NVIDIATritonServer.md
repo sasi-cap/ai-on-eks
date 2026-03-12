@@ -139,7 +139,7 @@ cd ai-on-eks/infra/nvidia-triton-server/ && chmod +x install.sh
 
 ```bash
 # Creates k8s config file to authenticate with EKS
-aws eks --region us-west-2 update-kubeconfig --name nvidia-triton-server
+aws eks --region eu-west-2 update-kubeconfig --name nvidia-triton-server
 
 kubectl get nodes # Output shows the EKS worker nodes
 ```
@@ -147,9 +147,9 @@ kubectl get nodes # Output shows the EKS worker nodes
 You should see three nodes deployed by this installation: two `m5.xlarge` and one `g5.24xlarge`.
 
 ```text
-ip-100-64-190-174.us-west-2.compute.internal   Ready    <none>   11d     v1.29.3-eks-ae9a62a
-ip-100-64-59-224.us-west-2.compute.internal    Ready    <none>   8m26s   v1.29.3-eks-ae9a62a
-ip-100-64-59-227.us-west-2.compute.internal    Ready    <none>   11d     v1.29.3-eks-ae9a62a
+ip-100-64-190-174.eu-west-2.compute.internal   Ready    <none>   11d     v1.29.3-eks-ae9a62a
+ip-100-64-59-224.eu-west-2.compute.internal    Ready    <none>   8m26s   v1.29.3-eks-ae9a62a
+ip-100-64-59-227.eu-west-2.compute.internal    Ready    <none>   11d     v1.29.3-eks-ae9a62a
 ```
 
 </CollapsibleContent>

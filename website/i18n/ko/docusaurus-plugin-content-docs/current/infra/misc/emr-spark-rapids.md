@@ -88,7 +88,7 @@ aws eks describe-cluster --name emr-spark-rapids
 
 ```bash
 # EKS 인증을 위한 k8s 구성 파일 생성
-aws eks --region us-west-2 update-kubeconfig --name emr-spark-rapids Cluster
+aws eks --region eu-west-2 update-kubeconfig --name emr-spark-rapids Cluster
 
 kubectl get nodes # 출력에 EKS 관리형 노드 그룹 노드가 표시됩니다
 
@@ -129,10 +129,10 @@ Fannie Mae's Single-Family Loan Performance Data는 2013년부터 시작하는 �
 
 #### 1단계: 사용자 지정 Docker 이미지 빌드
 
-- `us-west-2`에 위치한 EMR on EKS ECR 리포지토리에서 Spark Rapids 기본 이미지를 가져오려면 로그인합니다:
+- `eu-west-2`에 위치한 EMR on EKS ECR 리포지토리에서 Spark Rapids 기본 이미지를 가져오려면 로그인합니다:
 
 ```bash
-aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 895885662937.dkr.ecr.us-west-2.amazonaws.com
+aws ecr get-login-password --region eu-west-2 | docker login --username AWS --password-stdin 895885662937.dkr.ecr.eu-west-2.amazonaws.com
 ```
 
 다른 리전에 있는 경우 이 [가이드](https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/docker-custom-images-tag.html)를 참조하세요.
@@ -154,14 +154,14 @@ docker build -t emr-6.10.0-spark-rapids-custom:0.10 -f Dockerfile .
 - `<ACCOUNTID>`를 AWS 계정 ID로 바꿉니다. 다음 명령으로 ECR 리포지토리에 로그인합니다:
 
 ```bash
-aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin <ACCOUNTID>.dkr.ecr.us-west-2.amazonaws.com
+aws ecr get-login-password --region eu-west-2 | docker login --username AWS --password-stdin <ACCOUNTID>.dkr.ecr.eu-west-2.amazonaws.com
 ```
 
 - Docker 이미지를 ECR에 푸시하려면 다음을 사용합니다:
 
 ```bash
-$ docker tag emr-6.10.0-spark-rapids-custom:0.10 <ACCOUNT_ID>.dkr.ecr.us-west-2.amazonaws.com/emr-6.10.0-spark-rapids-custom:0.10
-$ docker push <ACCOUNT_ID>.dkr.ecr.us-west-2.amazonaws.com/emr-6.10.0-spark-rapids-custom:0.10
+$ docker tag emr-6.10.0-spark-rapids-custom:0.10 <ACCOUNT_ID>.dkr.ecr.eu-west-2.amazonaws.com/emr-6.10.0-spark-rapids-custom:0.10
+$ docker push <ACCOUNT_ID>.dkr.ecr.eu-west-2.amazonaws.com/emr-6.10.0-spark-rapids-custom:0.10
 ```
 
 `3단계`에서 작업 실행 중에 이 이미지를 사용할 수 있습니다.
@@ -182,7 +182,7 @@ $ docker push <ACCOUNT_ID>.dkr.ecr.us-west-2.amazonaws.com/emr-6.10.0-spark-rapi
 7. CSV 파일만 `${S3_BUCKET}/${EMR_VIRTUAL_CLUSTER_ID}/spark-rapids-emr/input/fannie-mae-single-family-loan-performance/` 아래의 S3 버킷에 복사합니다. 아래 예제는 3년 분량의 데이터(각 분기에 하나의 파일, 총 12개 파일)를 사용합니다. 참고: `${S3_BUCKET}` 및 `${EMR_VIRTUAL_CLUSTER_ID}` 값은 Terraform 출력에서 추출할 수 있습니다.
 
 ```
- aws s3 ls s3://emr-spark-rapids-<aws-account-id>-us-west-2/949wt7zuphox1beiv0i30v65i/spark-rapids-emr/input/fannie-mae-single-family-loan-performance/
+ aws s3 ls s3://emr-spark-rapids-<aws-account-id>-eu-west-2/949wt7zuphox1beiv0i30v65i/spark-rapids-emr/input/fannie-mae-single-family-loan-performance/
     2023-06-24 21:38:25 2301641519 2000Q1.csv
     2023-06-24 21:38:25 9739847213 2020Q2.csv
     2023-06-24 21:38:25 10985541111 2020Q3.csv
@@ -211,11 +211,11 @@ chmod +x execute_spark_rapids_xgboost.sh
 # 아래에 표시된 예시 입력
     Did you copy the fannie-mae-single-family-loan-performance data to S3 bucket(y/n): y
     Enter the customized Docker image URI: public.ecr.aws/o7d8v7g9/emr-6.10.0-spark-rapids:0.11
-    Enter EMR Virtual Cluster AWS Region: us-west-2
+    Enter EMR Virtual Cluster AWS Region: eu-west-2
     Enter the EMR Virtual Cluster ID: 949wt7zuphox1beiv0i30v65i
     Enter the EMR Execution Role ARN: arn:aws:iam::<ACCOUNTID>:role/emr-spark-rapids-emr-eks-data-team-a
     Enter the CloudWatch Log Group name: /emr-on-eks-logs/emr-spark-rapids/emr-ml-team-a
-    Enter the S3 Bucket for storing PySpark Scripts, Pod Templates, Input data and Output data.<bucket-name>: emr-spark-rapids-<ACCOUNTID>-us-west-2
+    Enter the S3 Bucket for storing PySpark Scripts, Pod Templates, Input data and Output data.<bucket-name>: emr-spark-rapids-<ACCOUNTID>-eu-west-2
     Enter the number of executor instances (4 to 8): 8
 ```
 
@@ -311,7 +311,7 @@ kubectl port-forward svc/grafana 3000:80 -n grafana
 사용자 이름으로 `admin`을 사용하여 Grafana에 로그인하고 다음 AWS CLI 명령을 사용하여 Secrets Manager에서 비밀번호를 검색합니다:
 
 ```bash
-aws secretsmanager get-secret-value --secret-id emr-spark-rapids-grafana --region us-west-2
+aws secretsmanager get-secret-value --secret-id emr-spark-rapids-grafana --region eu-west-2
 ```
 
 로그인한 후 AMP 데이터 소스를 Grafana에 추가하고 오픈소스 GPU 모니터링 대시보드를 가져옵니다. 그런 다음 아래 스크린샷과 같이 Grafana 대시보드를 사용하여 메트릭을 탐색하고 시각화할 수 있습니다.

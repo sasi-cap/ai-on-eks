@@ -131,10 +131,10 @@ If the deployment is not complete, rerun install.sh
 
 <CollapsibleContent header={<h3><span>Verify the resources</span></h3>}>
 
-First, you’ll need to configure your kubeconfig to connect to the newly created Amazon EKS cluster. Use the following command, replacing `us-west-2` with your specific AWS Region if necessary:
+First, you’ll need to configure your kubeconfig to connect to the newly created Amazon EKS cluster. Use the following command, replacing `eu-west-2` with your specific AWS Region if necessary:
 
 ```bash
-aws eks --region us-west-2 update-kubeconfig --name jupyterhub-on-eks
+aws eks --region eu-west-2 update-kubeconfig --name jupyterhub-on-eks
 ```
 Now, you can check the status of the pods across various namespaces by running. Keep an eye out for the key deployments:
 

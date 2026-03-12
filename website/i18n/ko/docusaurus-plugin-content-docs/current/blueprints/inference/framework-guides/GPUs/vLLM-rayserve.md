@@ -90,7 +90,7 @@ cd ai-on-eks/infra/jark-stack/ && chmod +x install.sh
 EKS로 인증하기 위한 k8s 설정 파일을 생성합니다.
 
 ```bash
-aws eks --region us-west-2 update-kubeconfig --name jark-stack
+aws eks --region eu-west-2 update-kubeconfig --name jark-stack
 ```
 
 ```bash
@@ -99,9 +99,9 @@ kubectl get nodes
 
 ```text
 NAME                                           STATUS   ROLES    AGE    VERSION
-ip-100-64-118-130.us-west-2.compute.internal   Ready    <none>   3h9m   v1.30.0-eks-036c24b
-ip-100-64-127-174.us-west-2.compute.internal   Ready    <none>   9h     v1.30.0-eks-036c24b
-ip-100-64-132-168.us-west-2.compute.internal   Ready    <none>   9h     v1.30.0-eks-036c24b
+ip-100-64-118-130.eu-west-2.compute.internal   Ready    <none>   3h9m   v1.30.0-eks-036c24b
+ip-100-64-127-174.eu-west-2.compute.internal   Ready    <none>   9h     v1.30.0-eks-036c24b
+ip-100-64-132-168.eu-west-2.compute.internal   Ready    <none>   9h     v1.30.0-eks-036c24b
 ```
 
 Karpenter 오토스케일러 Nodepool 확인

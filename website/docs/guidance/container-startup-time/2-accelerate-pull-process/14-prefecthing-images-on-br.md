@@ -33,7 +33,7 @@ git clone https://github.com/aws-samples/bottlerocket-images-cache/
 cd bottlerocket-images-cache/
 
 # Using nohup in terminals to avoid disconnections
-❯ nohup ./snapshot.sh --snapshot-size 150 -r us-west-2 \
+❯ nohup ./snapshot.sh --snapshot-size 150 -r eu-west-2 \
   docker.io/rayproject/ray-ml:2.10.0-py310-gpu,public.ecr.aws/data-on-eks/ray2.11.0-py310-gpu-stablediffusion:latest &
 
 ❯ tail -f nohup.out
@@ -61,7 +61,7 @@ cd bottlerocket-images-cache/
 2024-07-15 17:38:36 I - [8/8] Cleanup.
 2024-07-15 17:38:37 I - Stack deleted.
 2024-07-15 17:38:37 I - --------------------------------------------------
-2024-07-15 17:38:37 I - All done! Created snapshot in us-west-2: snap-0c6d965cf431785ed
+2024-07-15 17:38:37 I - All done! Created snapshot in eu-west-2: snap-0c6d965cf431785ed
 ```
 
 You can copy the snapshot ID `snap-0c6d965cf431785ed` and configure it as a snapshot for worker nodes.

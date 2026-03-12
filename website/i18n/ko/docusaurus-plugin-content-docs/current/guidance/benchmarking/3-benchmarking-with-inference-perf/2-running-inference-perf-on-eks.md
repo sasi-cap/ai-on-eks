@@ -186,11 +186,11 @@ metrics:
 
 ```
 첫 번째 벤치마크 실행:
-- us-west-2a의 벤치마크 Pod → us-west-2a의 추론 Pod
+- eu-west-2a의 벤치마크 Pod → eu-west-2a의 추론 Pod
 - 결과: TTFT = 800ms
 
 두 번째 벤치마크 실행 (Pod 재시작 후):
-- us-west-2b의 벤치마크 Pod → us-west-2a의 추론 Pod
+- eu-west-2b의 벤치마크 Pod → eu-west-2a의 추론 Pod
 - 결과: TTFT = 850ms
 ```
 
@@ -241,8 +241,8 @@ kubectl get pods -n default -o wide -l app.kubernetes.io/component=qwen3-vllm
 kubectl get pods -n benchmarking -o wide -l app=inference-perf
 
 # 예상 출력 - 둘 다 동일한 영역:
-# qwen3-vllm-xxx      ip-10-0-1-100.us-west-2a...
-# inference-perf-yyy  ip-10-0-1-200.us-west-2a...
+# qwen3-vllm-xxx      ip-10-0-1-100.eu-west-2a...
+# inference-perf-yyy  ip-10-0-1-200.eu-west-2a...
 ```
 
 

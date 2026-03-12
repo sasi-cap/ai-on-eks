@@ -133,7 +133,7 @@ are subject to change. For full details, refer to the pricing webpage for each A
 ### Sample cost table
 
 The following table provides a sample cost breakdown for deploying this guidance with the default parameters in the
-`us-west-2` (Oregon) Region for one month. This estimate is based on the AWS Pricing Calculator output for the full
+`eu-west-2` (Oregon) Region for one month. This estimate is based on the AWS Pricing Calculator output for the full
 deployment as per the guidance. This **does not** factor any model deployments on top of the running environment.
 
 | **AWS service**                  | Dimensions                        | Cost, month [USD] |
@@ -275,7 +275,7 @@ You should see the following output (expand the section to see the output)
     default                service/kubernetes                                               ClusterIP      172.20.0.1       <none>                                                                          443/TCP                                        13d
     envoy-gateway-system   service/envoy-aibrix-system-aibrix-eg-903790dc                   ClusterIP      172.20.249.100   <none>                                                                          80/TCP                                         13d
     envoy-gateway-system   service/envoy-gateway                                            ClusterIP      172.20.113.229   <none>                                                                          18000/TCP,18001/TCP,18002/TCP,19001/TCP        13d
-    ingress-nginx          service/ingress-nginx-controller                                 LoadBalancer   172.20.27.209    k8s-ingressn-ingressn-ffa534dcb1-b4b54bcc24eaeddd.elb.us-west-2.amazonaws.com   80:31646/TCP,443:32024/TCP                     13d
+    ingress-nginx          service/ingress-nginx-controller                                 LoadBalancer   172.20.27.209    k8s-ingressn-ingressn-ffa534dcb1-b4b54bcc24eaeddd.elb.eu-west-2.amazonaws.com   80:31646/TCP,443:32024/TCP                     13d
     ingress-nginx          service/ingress-nginx-controller-admission                       ClusterIP      172.20.249.118   <none>                                                                          443/TCP                                        13d
     karpenter              service/karpenter                                                ClusterIP      172.20.149.70    <none>                                                                          8080/TCP                                       13d
     kube-system            service/aws-load-balancer-webhook-service                        ClusterIP      172.20.83.104    <none>                                                                          443/TCP                                        13d
@@ -555,7 +555,7 @@ aws ec2 describe-instance-type-offerings --location-type availability-zone --fil
 
 ```bash
 # Check cluster status
-aws eks describe-cluster --name inference-cluster --region us-west-2
+aws eks describe-cluster --name inference-cluster --region eu-west-2
 ```
 
 **Common Solutions:**

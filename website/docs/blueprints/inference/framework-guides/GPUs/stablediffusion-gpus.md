@@ -82,12 +82,12 @@ cd ai-on-eks/infra/jark-stack/ && chmod +x install.sh
 Verify the Amazon EKS Cluster
 
 ```bash
-aws eks --region us-west-2 describe-cluster --name jark-stack
+aws eks --region eu-west-2 describe-cluster --name jark-stack
 ```
 
 ```bash
 # Creates k8s config file to authenticate with EKS
-aws eks --region us-west-2 update-kubeconfig --name jark-stack
+aws eks --region eu-west-2 update-kubeconfig --name jark-stack
 
 # Output shows the EKS Managed Node group nodes
 kubectl get nodes
@@ -115,7 +115,7 @@ Let's take a closer look at the key files used in this deployment and understand
 Ensure the cluster is configured locally
 
 ```bash
-aws eks --region us-west-2 update-kubeconfig --name jark-stack
+aws eks --region eu-west-2 update-kubeconfig --name jark-stack
 ```
 
 **Deploy RayServe Cluster**
@@ -155,7 +155,7 @@ Events:
   ----     ------            ----               ----               -------
   Warning  FailedScheduling  41m                default-scheduler  0/8 nodes are available: 1 Insufficient cpu, 3 Insufficient memory, 8 Insufficient nvidia.com/gpu. preemption: 0/8 nodes are available: 8 No preemption victims found for incoming pod.
   Normal   Nominated         41m                karpenter          Pod should schedule on: nodeclaim/gpu-ljvhl
-  Normal   Scheduled         40m                default-scheduler  Successfully assigned stablediffusion/stablediffusion-raycluster-ms6pl-worker-gpu-85d22 to ip-100-64-136-72.us-west-2.compute.internal
+  Normal   Scheduled         40m                default-scheduler  Successfully assigned stablediffusion/stablediffusion-raycluster-ms6pl-worker-gpu-85d22 to ip-100-64-136-72.eu-west-2.compute.internal
   Normal   Pulled            40m                kubelet            Container image "public.ecr.aws/data-on-eks/ray2.11.0-py310-gpu-stablediffusion:latest" already present on machine
   Normal   Created           40m                kubelet            Created container wait-gcs-ready
   Normal   Started           40m                kubelet            Started container wait-gcs-ready

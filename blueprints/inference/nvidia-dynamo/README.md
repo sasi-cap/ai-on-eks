@@ -368,7 +368,7 @@ extraPodSpec:
 extraPodSpec:
   nodeSelector:
     karpenter.sh/nodepool: g5-gpu-karpenter
-    topology.kubernetes.io/zone: us-west-2a
+    topology.kubernetes.io/zone: eu-west-2a
 ```
 
 ### Karpenter Provisioner Example
@@ -556,7 +556,7 @@ extraPodSpec:
 extraPodSpec:
   nodeSelector:
     karpenter.sh/nodepool: g5-gpu-karpenter
-    topology.kubernetes.io/zone: us-west-2a
+    topology.kubernetes.io/zone: eu-west-2a
   affinity:
     nodeAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
@@ -1094,7 +1094,7 @@ spec:
           values: ["spot", "on-demand"]  # Mix for reliability
         - key: topology.kubernetes.io/zone
           operator: In
-          values: ["us-west-2a", "us-west-2b", "us-west-2c"]  # Multiple AZs
+          values: ["eu-west-2a", "eu-west-2b", "eu-west-2c"]  # Multiple AZs
 ```
 
 **3. GPU Not Detected by Pod**

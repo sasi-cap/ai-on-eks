@@ -85,12 +85,12 @@ cd ai-on-eks/infra/jark-stack/ && chmod +x install.sh
 Amazon EKS 클러스터 확인
 
 ```bash
-aws eks --region us-west-2 describe-cluster --name jark-stack
+aws eks --region eu-west-2 describe-cluster --name jark-stack
 ```
 
 ```bash
 # EKS로 인증하기 위한 k8s 설정 파일 생성
-aws eks --region us-west-2 update-kubeconfig --name jark-stack
+aws eks --region eu-west-2 update-kubeconfig --name jark-stack
 
 # EKS Managed Node 그룹 노드 출력
 kubectl get nodes
@@ -118,7 +118,7 @@ kubectl get nodes
 클러스터가 로컬에서 구성되었는지 확인
 
 ```bash
-aws eks --region us-west-2 update-kubeconfig --name jark-stack
+aws eks --region eu-west-2 update-kubeconfig --name jark-stack
 ```
 
 **RayServe 클러스터 배포**
@@ -158,7 +158,7 @@ Events:
   ----     ------            ----               ----               -------
   Warning  FailedScheduling  41m                default-scheduler  0/8 nodes are available: 1 Insufficient cpu, 3 Insufficient memory, 8 Insufficient nvidia.com/gpu. preemption: 0/8 nodes are available: 8 No preemption victims found for incoming pod.
   Normal   Nominated         41m                karpenter          Pod should schedule on: nodeclaim/gpu-ljvhl
-  Normal   Scheduled         40m                default-scheduler  Successfully assigned stablediffusion/stablediffusion-raycluster-ms6pl-worker-gpu-85d22 to ip-100-64-136-72.us-west-2.compute.internal
+  Normal   Scheduled         40m                default-scheduler  Successfully assigned stablediffusion/stablediffusion-raycluster-ms6pl-worker-gpu-85d22 to ip-100-64-136-72.eu-west-2.compute.internal
   Normal   Pulled            40m                kubelet            Container image "public.ecr.aws/data-on-eks/ray2.11.0-py310-gpu-stablediffusion:latest" already present on machine
   Normal   Created           40m                kubelet            Created container wait-gcs-ready
   Normal   Started           40m                kubelet            Started container wait-gcs-ready

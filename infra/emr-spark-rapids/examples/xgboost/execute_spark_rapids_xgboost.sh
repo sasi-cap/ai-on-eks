@@ -9,7 +9,7 @@
 #--------------------------------------------
 JOB_NAME='spark-rapids-emr'
 EMR_EKS_RELEASE_LABEL="emr-7.0.0-spark-rapids-latest"
-AWS_REGION="${AWS_REGION:-us-west-2}"  # Example default region
+AWS_REGION="${AWS_REGION:-eu-west-2}"  # Example default region
 XGBOOST_IMAGE="${XGBOOST_IMAGE:-public.ecr.aws/data-on-eks/emr-7.0.0-spark-rapids-xgboost-custom:latest}"
 NUM_WORKERS="${NUM_WORKERS:-8}"  # Example default number of executors
 

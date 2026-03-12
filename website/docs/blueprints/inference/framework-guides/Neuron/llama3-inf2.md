@@ -104,12 +104,12 @@ cd ai-on-eks/infra/trainium-inferentia/
 Verify the Amazon EKS Cluster
 
 ```bash
-aws eks --region us-west-2 describe-cluster --name trainium-inferentia
+aws eks --region eu-west-2 describe-cluster --name trainium-inferentia
 ```
 
 ```bash
 # Creates k8s config file to authenticate with EKS
-aws eks --region us-west-2 update-kubeconfig --name trainium-inferentia
+aws eks --region eu-west-2 update-kubeconfig --name trainium-inferentia
 
 kubectl get nodes # Output shows the EKS Managed Node group nodes
 ```
@@ -142,7 +142,7 @@ Users can also modify the Dockerfile to suit their specific requirements and pus
 
 **Ensure the cluster is configured locally**
 ```bash
-aws eks --region us-west-2 update-kubeconfig --name trainium-inferentia
+aws eks --region eu-west-2 update-kubeconfig --name trainium-inferentia
 ```
 
 **Deploy RayServe Cluster**
@@ -183,7 +183,7 @@ service/llama3           ClusterIP   172.20.246.48   <none>       8000:32138/TCP
 $ kubectl get ingress -n llama3
 
 NAME             CLASS   HOSTS   ADDRESS                                                                         PORTS   AGE
-llama3           nginx   *       k8s-ingressn-ingressn-randomid-randomid.elb.us-west-2.amazonaws.com             80      2m4s
+llama3           nginx   *       k8s-ingressn-ingressn-randomid-randomid.elb.eu-west-2.amazonaws.com             80      2m4s
 
 ```
 

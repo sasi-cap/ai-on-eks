@@ -107,7 +107,7 @@ Volcano's gang scheduling ensures that all pods in a job (or "gang") are schedul
 
 :::info
 
-    **NOTE:** As of 2024/01/04 Trainium instances only available in us-west-2, us-east-1, and us-east-2 regions.
+    **NOTE:** As of 2024/01/04 Trainium instances only available in eu-west-2, us-east-1, and us-east-2 regions.
 
 :::
 
@@ -117,7 +117,7 @@ Volcano's gang scheduling ensures that all pods in a job (or "gang") are schedul
     export TF_VAR_enable_fsx_for_lustre=true
 
     # Set the region according to your requirements. Check Trn1 instance availability in the specified region.
-    export TF_VAR_region=us-west-2
+    export TF_VAR_region=eu-west-2
 
     # Enable Volcano custom scheduler with KubeRay Operator
     export TF_VAR_enable_volcano=true
@@ -138,12 +138,12 @@ Volcano's gang scheduling ensures that all pods in a job (or "gang") are schedul
     Verify the Amazon EKS Cluster
 
     ```bash
-    aws eks --region us-west-2 describe-cluster --name trainium-inferentia
+    aws eks --region eu-west-2 describe-cluster --name trainium-inferentia
     ```
 
     ```bash
     # Creates k8s config file to authenticate with EKS
-    aws eks --region us-west-2 update-kubeconfig --name trainium-inferentia
+    aws eks --region eu-west-2 update-kubeconfig --name trainium-inferentia
 
     kubectl get nodes # Output shows the EKS Managed Node group nodes
     ```

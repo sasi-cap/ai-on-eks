@@ -13,7 +13,7 @@
 # chmod 744 bert_pretrain_wikicorpus_tokenized_hdf5_seqlen128.tar
 # tar xvf bert_pretrain_wikicorpus_tokenized_hdf5_seqlen128.tar
 #--------------------------------------------------------------------------------
-read -p "Did you configure kubeconfig (e.g., aws eks --region us-west-2 update-kubeconfig --name trainium-inferentia):  (y/n): " response
+read -p "Did you configure kubeconfig (e.g., aws eks --region eu-west-2 update-kubeconfig --name trainium-inferentia):  (y/n): " response
 read -p "Confirm that you have the 'lib' folder with 'trn1_dist_ddp.py' in the same directory (y/n): " response
 read -p "Enter the ECR REPO (e.g., <AccountId>.dkr.ecr.<region>.amazonaws.com/eks_torchx_test): " ECR_REPO_URI
 

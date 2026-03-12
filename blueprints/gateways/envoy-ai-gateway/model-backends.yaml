@@ -55,7 +55,7 @@ metadata:
 spec:
   endpoints:
     - fqdn:
-        hostname: bedrock-runtime.us-west-2.amazonaws.com
+        hostname: bedrock-runtime.eu-west-2.amazonaws.com
         port: 443
 ---
 apiVersion: aigateway.envoyproxy.io/v1alpha1
@@ -84,7 +84,7 @@ spec:
       name: bedrock
   type: AWSCredentials
   awsCredentials:
-    region: us-west-2
+    region: eu-west-2
 ---
 apiVersion: gateway.networking.k8s.io/v1alpha3
 kind: BackendTLSPolicy
@@ -98,4 +98,4 @@ spec:
       name: bedrock-backend
   validation:
     wellKnownCACertificates: "System"
-    hostname: bedrock-runtime.us-west-2.amazonaws.com
+    hostname: bedrock-runtime.eu-west-2.amazonaws.com

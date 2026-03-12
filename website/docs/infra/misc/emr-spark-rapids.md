@@ -85,7 +85,7 @@ aws eks describe-cluster --name emr-spark-rapids
 
 ```bash
 # Creates k8s config file to authenticate with EKS
-aws eks --region us-west-2 update-kubeconfig --name emr-spark-rapids Cluster
+aws eks --region eu-west-2 update-kubeconfig --name emr-spark-rapids Cluster
 
 kubectl get nodes # Output shows the EKS Managed Node group nodes
 
@@ -126,10 +126,10 @@ Fannie Mae’s Single-Family Loan Performance Data has a comprehensive dataset s
 
 #### Step 1: Building a Custom Docker Image
 
-- To pull the Spark Rapids base image from the EMR on EKS ECR repository located in `us-west-2`, log in:
+- To pull the Spark Rapids base image from the EMR on EKS ECR repository located in `eu-west-2`, log in:
 
 ```bash
-aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 895885662937.dkr.ecr.us-west-2.amazonaws.com
+aws ecr get-login-password --region eu-west-2 | docker login --username AWS --password-stdin 895885662937.dkr.ecr.eu-west-2.amazonaws.com
 ```
 
 If you're located in a different region, please refer to: this [guide](https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/docker-custom-images-tag.html.).
@@ -151,14 +151,14 @@ docker build -t emr-6.10.0-spark-rapids-custom:0.10 -f Dockerfile .
 - Replace `<ACCOUNTID>` with your AWS account ID. Log in to your ECR repository with the following command:
 
 ```bash
-aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin <ACCOUNTID>.dkr.ecr.us-west-2.amazonaws.com
+aws ecr get-login-password --region eu-west-2 | docker login --username AWS --password-stdin <ACCOUNTID>.dkr.ecr.eu-west-2.amazonaws.com
 ```
 
 - To push your Docker image to your ECR, use:
 
 ```bash
-$ docker tag emr-6.10.0-spark-rapids-custom:0.10 <ACCOUNT_ID>.dkr.ecr.us-west-2.amazonaws.com/emr-6.10.0-spark-rapids-custom:0.10
-$ docker push <ACCOUNT_ID>.dkr.ecr.us-west-2.amazonaws.com/emr-6.10.0-spark-rapids-custom:0.10
+$ docker tag emr-6.10.0-spark-rapids-custom:0.10 <ACCOUNT_ID>.dkr.ecr.eu-west-2.amazonaws.com/emr-6.10.0-spark-rapids-custom:0.10
+$ docker push <ACCOUNT_ID>.dkr.ecr.eu-west-2.amazonaws.com/emr-6.10.0-spark-rapids-custom:0.10
 ```
 
 You can use this image during the job execution in `Step3` .
@@ -179,7 +179,7 @@ This dataset is sourced from [Fannie Mae’s Single-Family Loan Performance Data
 7. Copy only the CSV files to an S3 bucket under `${S3_BUCKET}/${EMR_VIRTUAL_CLUSTER_ID}/spark-rapids-emr/input/fannie-mae-single-family-loan-performance/`. The example below uses three years of data (one file for each quarter, 12 files in total). Note: `${S3_BUCKET}` and `${EMR_VIRTUAL_CLUSTER_ID}` values can be extracted from Terraform outputs.
 
 ```
- aws s3 ls s3://emr-spark-rapids-<aws-account-id>-us-west-2/949wt7zuphox1beiv0i30v65i/spark-rapids-emr/input/fannie-mae-single-family-loan-performance/
+ aws s3 ls s3://emr-spark-rapids-<aws-account-id>-eu-west-2/949wt7zuphox1beiv0i30v65i/spark-rapids-emr/input/fannie-mae-single-family-loan-performance/
     2023-06-24 21:38:25 2301641519 2000Q1.csv
     2023-06-24 21:38:25 9739847213 2020Q2.csv
     2023-06-24 21:38:25 10985541111 2020Q3.csv
@@ -208,11 +208,11 @@ chmod +x execute_spark_rapids_xgboost.sh
 # Example inputs shown below
     Did you copy the fannie-mae-single-family-loan-performance data to S3 bucket(y/n): y
     Enter the customized Docker image URI: public.ecr.aws/o7d8v7g9/emr-6.10.0-spark-rapids:0.11
-    Enter EMR Virtual Cluster AWS Region: us-west-2
+    Enter EMR Virtual Cluster AWS Region: eu-west-2
     Enter the EMR Virtual Cluster ID: 949wt7zuphox1beiv0i30v65i
     Enter the EMR Execution Role ARN: arn:aws:iam::<ACCOUNTID>:role/emr-spark-rapids-emr-eks-data-team-a
     Enter the CloudWatch Log Group name: /emr-on-eks-logs/emr-spark-rapids/emr-ml-team-a
-    Enter the S3 Bucket for storing PySpark Scripts, Pod Templates, Input data and Output data.<bucket-name>: emr-spark-rapids-<ACCOUNTID>-us-west-2
+    Enter the S3 Bucket for storing PySpark Scripts, Pod Templates, Input data and Output data.<bucket-name>: emr-spark-rapids-<ACCOUNTID>-eu-west-2
     Enter the number of executor instances (4 to 8): 8
 ```
 
@@ -308,7 +308,7 @@ kubectl port-forward svc/grafana 3000:80 -n grafana
 Login to Grafana using `admin` as the username, and retrieve the password from Secrets Manager using the following AWS CLI command:
 
 ```bash
-aws secretsmanager get-secret-value --secret-id emr-spark-rapids-grafana --region us-west-2
+aws secretsmanager get-secret-value --secret-id emr-spark-rapids-grafana --region eu-west-2
 ```
 
 Once logged in, add the AMP datasource to Grafana and import the Open Source GPU monitoring dashboard. You can then explore the metrics and visualize them using the Grafana dashboard, as shown in the screenshot below.

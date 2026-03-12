@@ -2,7 +2,7 @@
 
 # Set the AWS region and the name of the ECR repository
 
-REGION=us-west-2
+REGION=eu-west-2
 ECR_REPO_NAME=jupyterhub-pytorch-neuron-pytorch
 DOCKER_FILE=docker/jupyterhub-pytorch-neuron-pytorch.Dockerfile
 

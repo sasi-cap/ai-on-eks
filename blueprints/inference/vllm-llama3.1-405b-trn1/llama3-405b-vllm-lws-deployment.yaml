@@ -1,6 +1,6 @@
 # Important Notice:
 # Before deploying this configuration, please ensure the following:
-# 1. Region and Environment Variables: Verify that the `AWS_DEFAULT_REGION` and other environment variables are correctly set for your deployment. This YAML is currently configured for the `us-west-2` region.
+# 1. Region and Environment Variables: Verify that the `AWS_DEFAULT_REGION` and other environment variables are correctly set for your deployment. This YAML is currently configured for the `eu-west-2` region.
 # 2. Pre-requisite: Check the README.md file for instructions.
 # 3. Custom Images: This configuration uses a custom image hosted on ECR (`public.ecr.aws/data-on-eks/neuron-sdk2.20-vllm0.5.0-neuron:v8`). Ensure that this image is accessible and meets your deployment needs.
 
@@ -72,7 +72,7 @@ spec:
           - name: VLLM_ENGINE_ITERATION_TIMEOUT_S
             value: "600"
           - name: AWS_DEFAULT_REGION
-            value: us-west-2
+            value: eu-west-2
           - name: NEURON_MODEL_PATH
             value: /mnt/k8s-disks/0/checkpoints/llama-3.1-405b-instruct/
           # - name: NEURON_CONTEXT_LENGTH_BUCKETS # not working
@@ -191,7 +191,7 @@ spec:
           - name: VLLM_ENGINE_ITERATION_TIMEOUT_S
             value: "600"
           - name: AWS_DEFAULT_REGION
-            value: us-west-2
+            value: eu-west-2
           - name: NEURON_MODEL_PATH
             value: /mnt/k8s-disks/0/checkpoints/llama-3.1-405b-instruct/
           # - name: NEURON_CONTEXT_LENGTH_BUCKETS # not working

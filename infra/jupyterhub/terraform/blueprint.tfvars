@@ -1,7 +1,7 @@
 name                      = "jupyterhub"
 enable_aws_efs_csi_driver = true
 enable_jupyterhub         = true
-# region                    = "us-west-2"
+# region                    = "eu-west-2"
 # eks_cluster_version       = "1.34"
 
 # -------------------------------------------------------------------------------------

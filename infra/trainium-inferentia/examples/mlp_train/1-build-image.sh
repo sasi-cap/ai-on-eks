@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the AWS region and the name of the ECR repository
-REGION=us-west-2
+REGION=eu-west-2
 ECR_REPO_NAME=eks_mlperf_training
 
 # Check if the ECR repository exists

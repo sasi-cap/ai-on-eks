@@ -98,12 +98,12 @@ cd ai-on-eks/infra/trainium-inferentia
 
 By default **MPI operator** is not installed and its set to false. We will run the below export commands to set environment variables.
 
-**NOTE:** As of 2024/01/04 Trainium instances only available in us-west-2, us-east-1, and us-east-2 regions.
+**NOTE:** As of 2024/01/04 Trainium instances only available in eu-west-2, us-east-1, and us-east-2 regions.
 
 ```bash
 export TF_VAR_enable_mpi_operator=true
 export TF_VAR_enable_fsx_for_lustre=true
-export TF_VAR_region=us-west-2
+export TF_VAR_region=eu-west-2
 export TF_VAR_trn1_32xl_min_size=4
 export TF_VAR_trn1_32xl_desired_size=4
 ```
@@ -119,12 +119,12 @@ Run the install script to provision an EKS cluster with all the add-ons needed f
 Verify the Amazon EKS Cluster
 
 ```bash
-aws eks --region us-west-2 describe-cluster --name trainium-inferentia
+aws eks --region eu-west-2 describe-cluster --name trainium-inferentia
 ```
 
 ```bash
 # Creates k8s config file to authenticate with EKS
-aws eks --region us-west-2 update-kubeconfig --name trainium-inferentia
+aws eks --region eu-west-2 update-kubeconfig --name trainium-inferentia
 
 kubectl get nodes # Output shows the EKS Managed Node group nodes
 ```

@@ -111,7 +111,7 @@ allowed_inbound_cidrs       = "0.0.0.0/0"           # 인바운드 IP 제한
 배포 후 클러스터에 액세스하도록 kubectl을 구성합니다:
 
 ```bash
-aws eks update-kubeconfig --name aioeks-agents --region us-west-2
+aws eks update-kubeconfig --name aioeks-agents --region eu-west-2
 ```
 
 ## 서비스 액세스
@@ -147,7 +147,7 @@ MCP Gateway Registry는 `https://mcpregistry.<your-domain>`에서 사용할 수 
 | 변수 | 설명 | 기본값 |
 |------|------|--------|
 | `name` | 클러스터 이름 | `aioeks-agents` |
-| `region` | AWS 리전 | `us-west-2` |
+| `region` | AWS 리전 | `eu-west-2` |
 | `eks_cluster_version` | EKS 버전 | `1.34` |
 | `acm_certificate_domain` | TLS 인증서용 도메인 | `""` (필수) |
 | `allowed_inbound_cidrs` | 로드 밸런서를 통해 허용되는 CIDR 범위 | `0.0.0.0/0` |

@@ -99,7 +99,7 @@ To customize this behavior, you can add the following optional flags:
 |-----------|-------------|-------------|
 |`--repo-name`| The name of the ECR repository |dlc-slurmd|
 |`--tag`|The image tag |25.11.1-ubuntu24.04|
-|`--region`| The AWS region of your ECR repository | inferred from the AWS CLI configuration or set to `us-west-2`|
+|`--region`| The AWS region of your ECR repository | inferred from the AWS CLI configuration or set to `eu-west-2`|
 |`--skip-build`| Set if using an existing image already in ECR | `false`|
 |`--skip-setup`| Set if you previously generate a `blueprints/training/slinky-slurm/slurm-values.yaml` file |`false`|
 |`--help`| View flag options |`false`|
@@ -176,7 +176,7 @@ service/mariadb               ClusterIP      172.20.165.187   <none>            
 service/mariadb-internal      ClusterIP      None             <none>                                                                       3306/TCP       9m12s
 service/slurm-accounting      ClusterIP      172.20.206.252   <none>                                                                       6819/TCP       9m6s
 service/slurm-controller      ClusterIP      172.20.22.142    <none>                                                                       6817/TCP       9m5s
-service/slurm-login-slinky    LoadBalancer   172.20.155.154   k8s-slurm-slurmlog-d3c664afd2-5c3621e9c562ee2d.elb.us-west-2.amazonaws.com   22:31787/TCP   9m5s
+service/slurm-login-slinky    LoadBalancer   172.20.155.154   k8s-slurm-slurmlog-d3c664afd2-5c3621e9c562ee2d.elb.eu-west-2.amazonaws.com   22:31787/TCP   9m5s
 service/slurm-restapi         ClusterIP      172.20.130.229   <none>                                                                       6820/TCP       9m5s
 service/slurm-workers-slurm   ClusterIP      None             <none>                                                                       6818/TCP       9m5s
 

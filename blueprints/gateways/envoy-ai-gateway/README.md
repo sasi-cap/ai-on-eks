@@ -91,7 +91,7 @@ Once the installation finishes, verify the Amazon EKS Cluster.
 Creates k8s config file to authenticate with EKS.
 
 ```bash
-aws eks --region us-west-2 update-kubeconfig --name envoy-gateway-cluster
+aws eks --region eu-west-2 update-kubeconfig --name envoy-gateway-cluster
 ```
 
 ```bash
@@ -216,7 +216,7 @@ The AI Gateway routes requests based on the `x-ai-eg-model` header:
 - **Authentication**: Pod Identity (automatically configured via installation script)
 - **Schema**: AWSAnthropic for native Bedrock support
 - **Endpoint**: `/anthropic/v1/messages` (Anthropic Messages API format)
-- **Region**: Configurable in `backend-security-policy.yaml` (default: us-west-2)
+- **Region**: Configurable in `backend-security-policy.yaml` (default: eu-west-2)
 
 ## Resources
 

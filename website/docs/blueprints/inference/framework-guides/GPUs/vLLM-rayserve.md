@@ -87,7 +87,7 @@ Once the installation finishes, verify the Amazon EKS Cluster.
 Creates k8s config file to authenticate with EKS.
 
 ```bash
-aws eks --region us-west-2 update-kubeconfig --name jark-stack
+aws eks --region eu-west-2 update-kubeconfig --name jark-stack
 ```
 
 ```bash
@@ -96,9 +96,9 @@ kubectl get nodes
 
 ```text
 NAME                                           STATUS   ROLES    AGE    VERSION
-ip-100-64-118-130.us-west-2.compute.internal   Ready    <none>   3h9m   v1.30.0-eks-036c24b
-ip-100-64-127-174.us-west-2.compute.internal   Ready    <none>   9h     v1.30.0-eks-036c24b
-ip-100-64-132-168.us-west-2.compute.internal   Ready    <none>   9h     v1.30.0-eks-036c24b
+ip-100-64-118-130.eu-west-2.compute.internal   Ready    <none>   3h9m   v1.30.0-eks-036c24b
+ip-100-64-127-174.eu-west-2.compute.internal   Ready    <none>   9h     v1.30.0-eks-036c24b
+ip-100-64-132-168.eu-west-2.compute.internal   Ready    <none>   9h     v1.30.0-eks-036c24b
 ```
 
 Verify the Karpenter autosclaer Nodepools

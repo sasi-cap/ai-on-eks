@@ -9,7 +9,7 @@ cd "$SCRIPT_DIR"
 
 # Configuration
 CLUSTER_NAME="dynamo-on-eks"
-REGION="us-west-2"
+REGION="eu-west-2"
 NAMESPACE="dynamo-cloud"
 
 # Colors for output

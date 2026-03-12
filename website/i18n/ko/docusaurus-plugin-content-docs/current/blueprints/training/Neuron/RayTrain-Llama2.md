@@ -107,7 +107,7 @@ Volcano의 Gang 스케줄링은 작업(또는 "Gang")의 모든 파드가 동시
 
 :::info
 
-    **참고:** 2024/01/04 기준 Trainium 인스턴스는 us-west-2, us-east-1 및 us-east-2 리전에서만 사용 가능합니다.
+    **참고:** 2024/01/04 기준 Trainium 인스턴스는 eu-west-2, us-east-1 및 us-east-2 리전에서만 사용 가능합니다.
 
 :::
 
@@ -117,7 +117,7 @@ Volcano의 Gang 스케줄링은 작업(또는 "Gang")의 모든 파드가 동시
     export TF_VAR_enable_fsx_for_lustre=true
 
     # 요구사항에 따라 리전을 설정합니다. 지정된 리전에서 Trn1 인스턴스 가용성을 확인하세요.
-    export TF_VAR_region=us-west-2
+    export TF_VAR_region=eu-west-2
 
     # KubeRay Operator와 함께 Volcano 커스텀 스케줄러 활성화
     export TF_VAR_enable_volcano=true
@@ -140,12 +140,12 @@ Volcano의 Gang 스케줄링은 작업(또는 "Gang")의 모든 파드가 동시
     Amazon EKS 클러스터 확인
 
     ```bash
-    aws eks --region us-west-2 describe-cluster --name trainium-inferentia
+    aws eks --region eu-west-2 describe-cluster --name trainium-inferentia
     ```
 
     ```bash
     # EKS와 인증하기 위한 k8s 설정 파일 생성
-    aws eks --region us-west-2 update-kubeconfig --name trainium-inferentia
+    aws eks --region eu-west-2 update-kubeconfig --name trainium-inferentia
 
     kubectl get nodes # 출력은 EKS 관리형 노드 그룹 노드를 보여줍니다
     ```

@@ -13,7 +13,7 @@ enable_ai_ml_observability_stack = true
 # enable_nvidia_dra_driver         = true
 # enable_nvidia_gpu_operator       = true
 # -------------------------------------------------------------------------------------
-# region                           = "us-west-2"
+# region                           = "eu-west-2"
 # eks_cluster_version              = "1.34"
 
 # -------------------------------------------------------------------------------------

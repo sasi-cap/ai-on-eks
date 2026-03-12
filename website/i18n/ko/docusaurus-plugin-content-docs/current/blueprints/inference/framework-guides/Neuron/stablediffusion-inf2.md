@@ -95,12 +95,12 @@ cd ai-on-eks/infra/trainium-inferentia/
 Amazon EKS 클러스터 확인
 
 ```bash
-aws eks --region us-west-2 describe-cluster --name trainium-inferentia
+aws eks --region eu-west-2 describe-cluster --name trainium-inferentia
 ```
 
 ```bash
 # EKS 인증을 위한 k8s 구성 파일 생성
-aws eks --region us-west-2 update-kubeconfig --name trainium-inferentia
+aws eks --region eu-west-2 update-kubeconfig --name trainium-inferentia
 
 kubectl get nodes # 출력은 EKS Managed Node group 노드를 표시합니다
 ```
@@ -130,7 +130,7 @@ kubectl get nodes # 출력은 EKS Managed Node group 노드를 표시합니다
 
 **클러스터가 로컬에서 구성되었는지 확인**
 ```bash
-aws eks --region us-west-2 update-kubeconfig --name trainium-inferentia
+aws eks --region eu-west-2 update-kubeconfig --name trainium-inferentia
 ```
 
 **RayServe 클러스터 배포**
@@ -175,7 +175,7 @@ stablediffusion-service-serve-svc   NodePort   172.20.15.224    <none>        80
 $ kubectl get ingress -n stablediffusion
 
 NAME                      CLASS   HOSTS   ADDRESS                                                                         PORTS   AGE
-stablediffusion-ingress   nginx   *       k8s-ingressn-ingressn-7f3f4b475b-1b8966c0b8f4d3da.elb.us-west-2.amazonaws.com   80      16h
+stablediffusion-ingress   nginx   *       k8s-ingressn-ingressn-7f3f4b475b-1b8966c0b8f4d3da.elb.eu-west-2.amazonaws.com   80      16h
 ```
 
 이제 아래의 로드 밸런서 URL을 사용하여 Ray 대시보드에 액세스할 수 있습니다.

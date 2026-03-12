@@ -65,7 +65,7 @@ Set up AWS credentials so your benchmark pod can write results to S3 without har
 ```bash
 # Create S3 bucket for benchmark results
 export BUCKET_NAME="inference-perf-results-$(aws sts get-caller-identity --query Account --output text)"
-aws s3 mb s3://${BUCKET_NAME} --region us-west-2
+aws s3 mb s3://${BUCKET_NAME} --region eu-west-2
 
 # Install EKS Pod Identity Agent (already deployed on the blueprint reference - https://awslabs.github.io/ai-on-eks/docs/infra/inference-ready-cluster)
 

@@ -153,7 +153,7 @@ export TF_VAR_enable_nvidia_triton_server=false
 
 ```bash
 # EKS로 인증하기 위한 k8s 설정 파일 생성
-aws eks --region us-west-2 update-kubeconfig --name nvidia-triton-server
+aws eks --region eu-west-2 update-kubeconfig --name nvidia-triton-server
 ```
 
 배포된 파드의 상태를 확인합니다
@@ -191,7 +191,7 @@ kubectl get node -l type=karpenter -L node.kubernetes.io/instance-type
 
 ```text
 NAME                                         STATUS   ROLES    AGE     VERSION               INSTANCE-TYPE
-ip-100-64-77-39.us-west-2.compute.internal   Ready    <none>   4m46s   v1.30.0-eks-036c24b   g5.2xlarge
+ip-100-64-77-39.eu-west-2.compute.internal   Ready    <none>   4m46s   v1.30.0-eks-036c24b   g5.2xlarge
 ```
 
 **4. 배포된 모델 확인**

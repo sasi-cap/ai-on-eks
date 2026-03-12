@@ -186,11 +186,11 @@ Without proper placement, benchmark results become unreliable:
 
 ```
 First benchmark run:
-- Benchmark pod in us-west-2a → Inference pod in us-west-2a
+- Benchmark pod in eu-west-2a → Inference pod in eu-west-2a
 - Result: TTFT = 800ms
 
 Second benchmark run (after pod restart):
-- Benchmark pod in us-west-2b → Inference pod in us-west-2a
+- Benchmark pod in eu-west-2b → Inference pod in eu-west-2a
 - Result: TTFT = 850ms
 ```
 
@@ -241,8 +241,8 @@ kubectl get pods -n default -o wide -l app.kubernetes.io/component=qwen3-vllm
 kubectl get pods -n benchmarking -o wide -l app=inference-perf
 
 # Expected output - both in same zone:
-# qwen3-vllm-xxx      ip-10-0-1-100.us-west-2a...
-# inference-perf-yyy  ip-10-0-1-200.us-west-2a...
+# qwen3-vllm-xxx      ip-10-0-1-100.eu-west-2a...
+# inference-perf-yyy  ip-10-0-1-200.eu-west-2a...
 ```
 
 

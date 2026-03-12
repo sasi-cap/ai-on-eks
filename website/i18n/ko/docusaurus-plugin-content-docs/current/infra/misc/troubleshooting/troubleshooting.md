@@ -182,7 +182,7 @@ kubectl get namespace $NAMESPACE -o json | sed 's/"kubernetes"//' | kubectl repl
 Terraform 설치 또는 재배포 중에 다음과 같은 오류가 발생할 수 있습니다: `AlreadyExistsException: An alias with the name ...` already exists. 이는 생성하려는 KMS 별칭이 AWS 계정에 이미 존재할 때 발생합니다.
 
 ```
-│ Error: creating KMS Alias (alias/eks/trainium-inferentia): AlreadyExistsException: An alias with the name arn:aws:kms:us-west-2:23423434:alias/eks/trainium-inferentia already exists
+│ Error: creating KMS Alias (alias/eks/trainium-inferentia): AlreadyExistsException: An alias with the name arn:aws:kms:eu-west-2:23423434:alias/eks/trainium-inferentia already exists
 │
 │   with module.eks.module.kms.aws_kms_alias.this["cluster"],
 │   on .terraform/modules/eks.kms/main.tf line 452, in resource "aws_kms_alias" "this":

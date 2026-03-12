@@ -495,7 +495,7 @@ Configure kubectl and set required environment variables:
 ```bash
 # Cluster configuration
 export CLUSTER_NAME="nvidia-deep-research"
-export REGION="us-west-2"
+export REGION="eu-west-2"
 
 # Configure kubectl
 aws eks update-kubeconfig --region $REGION --name $CLUSTER_NAME

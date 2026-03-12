@@ -182,7 +182,7 @@ Once the installation finishes, you may find the `configure_kubectl` command fro
 
 ```bash
 # Creates k8s config file to authenticate with EKS
-aws eks --region us-west-2 update-kubeconfig --name nvidia-nim-eks
+aws eks --region eu-west-2 update-kubeconfig --name nvidia-nim-eks
 ```
 
 <details>

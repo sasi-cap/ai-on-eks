@@ -71,12 +71,12 @@ cd ai-on-eks/infra/trainium-inferentia/
 Verify the Amazon EKS Cluster
 
 ```bash
-aws eks --region us-west-2 describe-cluster --name trainium-inferentia
+aws eks --region eu-west-2 describe-cluster --name trainium-inferentia
 ```
 
 ```bash
 # Creates k8s config file to authenticate with EKS
-aws eks --region us-west-2 update-kubeconfig --name trainium-inferentia
+aws eks --region eu-west-2 update-kubeconfig --name trainium-inferentia
 
 # Output shows the EKS Managed Node group nodes
 kubectl get nodes
@@ -104,7 +104,7 @@ Let's take a closer look at the key files used in this deployment and understand
 Ensure the cluster is configured locally
 
 ```bash
-aws eks --region us-west-2 update-kubeconfig --name trainium-inferentia
+aws eks --region eu-west-2 update-kubeconfig --name trainium-inferentia
 ```
 
 **Deploy RayServe Cluster**

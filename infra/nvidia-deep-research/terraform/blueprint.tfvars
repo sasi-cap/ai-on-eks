@@ -1,5 +1,5 @@
 name = "nvidia-deep-research"
-# region              = "us-west-2"
+# region              = "eu-west-2"
 # eks_cluster_version = "1.33"
 
 # -------------------------------------------------------------------------------------

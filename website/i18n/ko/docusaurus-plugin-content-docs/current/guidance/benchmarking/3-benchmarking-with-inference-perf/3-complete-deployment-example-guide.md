@@ -65,7 +65,7 @@ kubectl logs -n default -l app.kubernetes.io/name=inference-charts -f
 ```bash
 # 벤치마크 결과를 위한 S3 버킷 생성
 export BUCKET_NAME="inference-perf-results-$(aws sts get-caller-identity --query Account --output text)"
-aws s3 mb s3://${BUCKET_NAME} --region us-west-2
+aws s3 mb s3://${BUCKET_NAME} --region eu-west-2
 
 # EKS Pod Identity Agent 설치 (블루프린트 참조에 이미 배포됨 - https://awslabs.github.io/ai-on-eks/docs/infra/inference-ready-cluster)
 

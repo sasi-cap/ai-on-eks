@@ -77,7 +77,7 @@ Docs coming soon ...
 | <a name="input_enable_amazon_prometheus"></a> [enable\_amazon\_prometheus](#input\_enable\_amazon\_prometheus) | Enable AWS Managed Prometheus service | `bool` | `true` | no |
 | <a name="input_enable_mlflow_tracking"></a> [enable\_mlflow\_tracking](#input\_enable\_mlflow\_tracking) | Enable MLflow Tracking | `bool` | `true` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name of the VPC and EKS Cluster | `string` | `"mlflow-on-eks"` | no |
-| <a name="input_region"></a> [region](#input\_region) | Region | `string` | `"us-west-2"` | no |
+| <a name="input_region"></a> [region](#input\_region) | Region | `string` | `"eu-west-2"` | no |
 | <a name="input_secondary_cidr_blocks"></a> [secondary\_cidr\_blocks](#input\_secondary\_cidr\_blocks) | Secondary CIDR blocks to be attached to VPC | `list(string)` | <pre>[<br>  "100.64.0.0/16"<br>]</pre> | no |
 | <a name="input_vpc_cidr"></a> [vpc\_cidr](#input\_vpc\_cidr) | VPC CIDR | `string` | `"10.1.0.0/21"` | no |
 

@@ -141,7 +141,7 @@ cd ai-on-eks/infra/nvidia-triton-server/ && chmod +x install.sh
 
 ```bash
 # EKS로 인증하기 위한 k8s 설정 파일 생성
-aws eks --region us-west-2 update-kubeconfig --name nvidia-triton-server
+aws eks --region eu-west-2 update-kubeconfig --name nvidia-triton-server
 
 kubectl get nodes # EKS 워커 노드 출력
 ```
@@ -149,9 +149,9 @@ kubectl get nodes # EKS 워커 노드 출력
 이 설치로 배포된 세 개의 노드를 볼 수 있습니다: 두 개의 `m5.xlarge`와 하나의 `g5.24xlarge`.
 
 ```text
-ip-100-64-190-174.us-west-2.compute.internal   Ready    <none>   11d     v1.29.3-eks-ae9a62a
-ip-100-64-59-224.us-west-2.compute.internal    Ready    <none>   8m26s   v1.29.3-eks-ae9a62a
-ip-100-64-59-227.us-west-2.compute.internal    Ready    <none>   11d     v1.29.3-eks-ae9a62a
+ip-100-64-190-174.eu-west-2.compute.internal   Ready    <none>   11d     v1.29.3-eks-ae9a62a
+ip-100-64-59-224.eu-west-2.compute.internal    Ready    <none>   8m26s   v1.29.3-eks-ae9a62a
+ip-100-64-59-227.eu-west-2.compute.internal    Ready    <none>   11d     v1.29.3-eks-ae9a62a
 ```
 
 </CollapsibleContent>

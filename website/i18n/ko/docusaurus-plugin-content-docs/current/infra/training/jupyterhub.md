@@ -132,10 +132,10 @@ cd ai-on-eks/infra/jupyterhub && chmod +x install.sh
 
 <CollapsibleContent header={<h3><span>리소스 확인</span></h3>}>
 
-먼저 새로 생성된 Amazon EKS 클러스터에 연결하도록 kubeconfig를 구성해야 합니다. 다음 명령을 사용하고 필요한 경우 `us-west-2`를 특정 AWS 리전으로 바꾸세요:
+먼저 새로 생성된 Amazon EKS 클러스터에 연결하도록 kubeconfig를 구성해야 합니다. 다음 명령을 사용하고 필요한 경우 `eu-west-2`를 특정 AWS 리전으로 바꾸세요:
 
 ```bash
-aws eks --region us-west-2 update-kubeconfig --name jupyterhub-on-eks
+aws eks --region eu-west-2 update-kubeconfig --name jupyterhub-on-eks
 ```
 이제 다음을 실행하여 다양한 네임스페이스에서 파드의 상태를 확인할 수 있습니다. 주요 배포에 주의를 기울이세요:
 

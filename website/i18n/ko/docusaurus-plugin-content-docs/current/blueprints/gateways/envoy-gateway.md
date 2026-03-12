@@ -91,7 +91,7 @@ cd ai-on-eks/infra/envoy-ai-gateway/ && chmod +x install.sh
 EKS와 인증하기 위한 k8s 설정 파일을 생성합니다.
 
 ```bash
-aws eks --region us-west-2 update-kubeconfig --name envoy-gateway-cluster
+aws eks --region eu-west-2 update-kubeconfig --name envoy-gateway-cluster
 ```
 
 ```bash
@@ -100,9 +100,9 @@ kubectl get nodes
 
 ```text
 NAME                                           STATUS   ROLES    AGE      VERSION
-ip-100-64-118-130.us-west-2.compute.internal   Ready    <none>   3h9m     v1.33.5-eks-ba24e9c
-ip-100-64-127-174.us-west-2.compute.internal   Ready    <none>   3h9m     v1.33.5-eks-ba24e9c
-ip-100-64-132-168.us-west-2.compute.internal   Ready    <none>   3h9m     v1.33.5-eks-ba24e9c
+ip-100-64-118-130.eu-west-2.compute.internal   Ready    <none>   3h9m     v1.33.5-eks-ba24e9c
+ip-100-64-127-174.eu-west-2.compute.internal   Ready    <none>   3h9m     v1.33.5-eks-ba24e9c
+ip-100-64-132-168.eu-west-2.compute.internal   Ready    <none>   3h9m     v1.33.5-eks-ba24e9c
 ```
 
 Karpenter 오토스케일러 Nodepool 확인
@@ -256,7 +256,7 @@ python3 multi-model-routing/client.py
 ```
 🚀 AI Gateway Multi-Model Routing Test
 ============================================================
-Gateway URL: http://k8s-envoygat-envoydef-xxxxxxxxxx-xxxxxxxxxxxxxxxx.elb.us-west-2.amazonaws.com
+Gateway URL: http://k8s-envoygat-envoydef-xxxxxxxxxx-xxxxxxxxxxxxxxxx.elb.eu-west-2.amazonaws.com
 
 === Testing Qwen3 1.7B ===
 Status Code: 200
@@ -317,7 +317,7 @@ AI Gateway는 `x-ai-eg-model` 헤더를 기반으로 요청을 라우팅합니�
 - **인증**: Pod Identity (설치 스크립트를 통해 자동 구성됨)
 - **스키마**: 네이티브 Bedrock 지원을 위한 AWSAnthropic
 - **엔드포인트**: `/anthropic/v1/messages` (Anthropic Messages API 형식)
-- **리전**: `backend-security-policy.yaml`에서 구성 가능 (기본값: us-west-2)
+- **리전**: `backend-security-policy.yaml`에서 구성 가능 (기본값: eu-west-2)
 
 ## 리소스
 

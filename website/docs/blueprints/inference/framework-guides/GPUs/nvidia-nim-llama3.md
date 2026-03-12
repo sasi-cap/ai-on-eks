@@ -153,7 +153,7 @@ Once the installation finishes, you may find the configure_kubectl command from 
 
 ```bash
 # Creates k8s config file to authenticate with EKS
-aws eks --region us-west-2 update-kubeconfig --name nvidia-triton-server
+aws eks --region eu-west-2 update-kubeconfig --name nvidia-triton-server
 ```
 
 Check the status of your pods deployed
@@ -191,7 +191,7 @@ kubectl get node -l type=karpenter -L node.kubernetes.io/instance-type
 
 ```text
 NAME                                         STATUS   ROLES    AGE     VERSION               INSTANCE-TYPE
-ip-100-64-77-39.us-west-2.compute.internal   Ready    <none>   4m46s   v1.30.0-eks-036c24b   g5.2xlarge
+ip-100-64-77-39.eu-west-2.compute.internal   Ready    <none>   4m46s   v1.30.0-eks-036c24b   g5.2xlarge
 ```
 
 **4. Verify the deployed model**

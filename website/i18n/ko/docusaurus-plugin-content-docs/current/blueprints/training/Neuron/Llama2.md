@@ -98,12 +98,12 @@ cd ai-on-eks/infra/trainium-inferentia
 
 기본적으로 **MPI operator**는 설치되지 않으며 false로 설정되어 있습니다. 아래 export 명령을 실행하여 환경 변수를 설정합니다.
 
-**참고:** 2024/01/04 기준 Trainium 인스턴스는 us-west-2, us-east-1 및 us-east-2 리전에서만 사용 가능합니다.
+**참고:** 2024/01/04 기준 Trainium 인스턴스는 eu-west-2, us-east-1 및 us-east-2 리전에서만 사용 가능합니다.
 
 ```bash
 export TF_VAR_enable_mpi_operator=true
 export TF_VAR_enable_fsx_for_lustre=true
-export TF_VAR_region=us-west-2
+export TF_VAR_region=eu-west-2
 export TF_VAR_trn1_32xl_min_size=4
 export TF_VAR_trn1_32xl_desired_size=4
 ```
@@ -120,12 +120,12 @@ export TF_VAR_trn1_32xl_desired_size=4
 Amazon EKS 클러스터 확인
 
 ```bash
-aws eks --region us-west-2 describe-cluster --name trainium-inferentia
+aws eks --region eu-west-2 describe-cluster --name trainium-inferentia
 ```
 
 ```bash
 # EKS와 인증하기 위한 k8s 설정 파일 생성
-aws eks --region us-west-2 update-kubeconfig --name trainium-inferentia
+aws eks --region eu-west-2 update-kubeconfig --name trainium-inferentia
 
 kubectl get nodes # 출력은 EKS 관리형 노드 그룹 노드를 보여줍니다
 ```

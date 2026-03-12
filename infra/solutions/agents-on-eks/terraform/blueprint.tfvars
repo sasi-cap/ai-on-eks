@@ -10,7 +10,7 @@ max_user_namespaces               = 16384       # Enables docker builds on bottl
 acm_certificate_domain            = ""          # Update with domain (ex agents.example.com)
 allowed_inbound_cidrs             = "0.0.0.0/0" # Set the CIDR range allowed through the load balancer. Should include your IP as well as the IP of the gitlab runner node
 
-# region              = "us-west-2"
+# region              = "eu-west-2"
 # eks_cluster_version = "1.34"
 
 # -------------------------------------------------------------------------------------

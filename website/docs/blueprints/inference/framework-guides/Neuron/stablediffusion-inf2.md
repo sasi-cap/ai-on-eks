@@ -94,12 +94,12 @@ cd ai-on-eks/infra/trainium-inferentia/
 Verify the Amazon EKS Cluster
 
 ```bash
-aws eks --region us-west-2 describe-cluster --name trainium-inferentia
+aws eks --region eu-west-2 describe-cluster --name trainium-inferentia
 ```
 
 ```bash
 # Creates k8s config file to authenticate with EKS
-aws eks --region us-west-2 update-kubeconfig --name trainium-inferentia
+aws eks --region eu-west-2 update-kubeconfig --name trainium-inferentia
 
 kubectl get nodes # Output shows the EKS Managed Node group nodes
 ```
@@ -129,7 +129,7 @@ Users can also modify the Dockerfile to suit their specific requirements and pus
 
 **Ensure the cluster is configured locally**
 ```bash
-aws eks --region us-west-2 update-kubeconfig --name trainium-inferentia
+aws eks --region eu-west-2 update-kubeconfig --name trainium-inferentia
 ```
 
 **Deploy RayServe Cluster**
@@ -174,7 +174,7 @@ stablediffusion-service-serve-svc   NodePort   172.20.15.224    <none>        80
 $ kubectl get ingress -n stablediffusion
 
 NAME                      CLASS   HOSTS   ADDRESS                                                                         PORTS   AGE
-stablediffusion-ingress   nginx   *       k8s-ingressn-ingressn-7f3f4b475b-1b8966c0b8f4d3da.elb.us-west-2.amazonaws.com   80      16h
+stablediffusion-ingress   nginx   *       k8s-ingressn-ingressn-7f3f4b475b-1b8966c0b8f4d3da.elb.eu-west-2.amazonaws.com   80      16h
 ```
 
 Now, you can access the Ray Dashboard from the Load balancer URL below.

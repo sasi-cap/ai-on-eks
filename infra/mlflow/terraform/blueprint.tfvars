@@ -2,7 +2,7 @@ name                     = "mlflow-on-eks"
 enable_amazon_prometheus = true
 enable_mlflow_tracking   = true
 enable_database_subnets  = true
-# region                   = "us-west-2"
+# region                   = "eu-west-2"
 # eks_cluster_version      = "1.34"
 
 # -------------------------------------------------------------------------------------

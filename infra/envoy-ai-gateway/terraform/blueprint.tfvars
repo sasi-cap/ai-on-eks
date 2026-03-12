@@ -1,12 +1,12 @@
 name                             = "envoy-gateway-cluster"
 enable_ai_ml_observability_stack = true
-availability_zones_count         = 4
+availability_zones_count         = 3
 enable_soci_snapshotter          = true
 enable_redis                     = true
 enable_envoy_gateway             = true
 enable_envoy_ai_gateway_crds     = true
 enable_envoy_ai_gateway          = true
-# region                           = "us-west-2"
+# region                           = "eu-west-2"
 # eks_cluster_version              = "1.33"
 
 # -------------------------------------------------------------------------------------

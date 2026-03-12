@@ -77,8 +77,8 @@ Apply complete! Resources: 8 added, 1 changed, 0 destroyed.
 
 Outputs:
 
-configure_kubectl = "aws eks --region us-west-2 update-kubeconfig --name trainium-inferentia"
-elastic_cache_redis_cluster_arn = "arn:aws:elasticache:us-west-2:11111111111:cluster:trainium-inferentia"
+configure_kubectl = "aws eks --region eu-west-2 update-kubeconfig --name trainium-inferentia"
+elastic_cache_redis_cluster_arn = "arn:aws:elasticache:eu-west-2:11111111111:cluster:trainium-inferentia"
 ```
 
 ### Add External Redis Information to RayService

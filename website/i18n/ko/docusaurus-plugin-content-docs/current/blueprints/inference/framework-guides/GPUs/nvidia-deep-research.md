@@ -501,7 +501,7 @@ kubectl을 구성하고 필요한 환경 변수를 설정합니다:
 ```bash
 # 클러스터 구성
 export CLUSTER_NAME="nvidia-deep-research"
-export REGION="us-west-2"
+export REGION="eu-west-2"
 
 # kubectl 구성
 aws eks update-kubeconfig --region $REGION --name $CLUSTER_NAME

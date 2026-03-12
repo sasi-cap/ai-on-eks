@@ -107,12 +107,12 @@ cd infra/solutions/inference-ready-cluster
 
 ```hcl
 name                             = "my-inference-cluster"
-region                           = "us-west-2"
+region                           = "eu-west-2"
 enable_kuberay_operator          = true
 enable_ai_ml_observability_stack = true
 enable_aibrix_stack              = true
 enable_leader_worker_set         = true
-availability_zones_count         = 4
+availability_zones_count         = 3
 ```
 
 모든 변수는 [`variables.tf` 파일](https://github.com/awslabs/ai-on-eks/blob/main/infra/base/terraform/variables.tf)에서 찾을 수 있습니다
@@ -181,7 +181,7 @@ kubectl get svc,pod,deployment -A
     default                service/kubernetes                                               ClusterIP      172.20.0.1       <none>                                                                          443/TCP                                        13d
     envoy-gateway-system   service/envoy-aibrix-system-aibrix-eg-903790dc                   ClusterIP      172.20.249.100   <none>                                                                          80/TCP                                         13d
     envoy-gateway-system   service/envoy-gateway                                            ClusterIP      172.20.113.229   <none>                                                                          18000/TCP,18001/TCP,18002/TCP,19001/TCP        13d
-    ingress-nginx          service/ingress-nginx-controller                                 LoadBalancer   172.20.27.209    k8s-ingressn-ingressn-ffa534dcb1-b4b54bcc24eaeddd.elb.us-west-2.amazonaws.com   80:31646/TCP,443:32024/TCP                     13d
+    ingress-nginx          service/ingress-nginx-controller                                 LoadBalancer   172.20.27.209    k8s-ingressn-ingressn-ffa534dcb1-b4b54bcc24eaeddd.elb.eu-west-2.amazonaws.com   80:31646/TCP,443:32024/TCP                     13d
     ingress-nginx          service/ingress-nginx-controller-admission                       ClusterIP      172.20.249.118   <none>                                                                          443/TCP                                        13d
     karpenter              service/karpenter                                                ClusterIP      172.20.149.70    <none>                                                                          8080/TCP                                       13d
     kube-system            service/aws-load-balancer-webhook-service                        ClusterIP      172.20.83.104    <none>                                                                          443/TCP                                        13d
@@ -369,7 +369,7 @@ aws ec2 describe-instance-type-offerings --location-type availability-zone --fil
 
 ```bash
 # 클러스터 상태 확인
-aws eks describe-cluster --name inference-cluster --region us-west-2
+aws eks describe-cluster --name inference-cluster --region eu-west-2
 ```
 
 **일반적인 해결 방법:**

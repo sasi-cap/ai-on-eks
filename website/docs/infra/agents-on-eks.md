@@ -111,7 +111,7 @@ Deployment takes approximately 20 minutes.
 After deployment, configure kubectl to access your cluster:
 
 ```bash
-aws eks update-kubeconfig --name aioeks-agents --region us-west-2
+aws eks update-kubeconfig --name aioeks-agents --region eu-west-2
 ```
 
 ## Accessing Services
@@ -147,7 +147,7 @@ The MCP Gateway Registry will be available at `https://mcpregistry.<your-domain>
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `name` | Cluster name | `aioeks-agents` |
-| `region` | AWS region | `us-west-2` |
+| `region` | AWS region | `eu-west-2` |
 | `eks_cluster_version` | EKS version | `1.34` |
 | `acm_certificate_domain` | Domain for TLS certificates | `""` (required) |
 | `allowed_inbound_cidrs` | CIDR ranges allowed through load balancer | `0.0.0.0/0` |

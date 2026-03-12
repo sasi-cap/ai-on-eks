@@ -182,7 +182,7 @@ cd ai-on-eks/infra/nvidia-nim
 
 ```bash
 # EKS 인증을 위한 k8s 구성 파일 생성
-aws eks --region us-west-2 update-kubeconfig --name nvidia-nim-eks
+aws eks --region eu-west-2 update-kubeconfig --name nvidia-nim-eks
 ```
 
 <details>

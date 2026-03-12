@@ -106,12 +106,12 @@ cd ai-on-eks/infra/trainium-inferentia/
 Amazon EKS 클러스터 확인
 
 ```bash
-aws eks --region us-west-2 describe-cluster --name trainium-inferentia
+aws eks --region eu-west-2 describe-cluster --name trainium-inferentia
 ```
 
 ```bash
 # EKS 인증을 위한 k8s 구성 파일 생성
-aws eks --region us-west-2 update-kubeconfig --name trainium-inferentia
+aws eks --region eu-west-2 update-kubeconfig --name trainium-inferentia
 
 kubectl get nodes # 출력은 EKS Managed Node group 노드를 표시합니다
 ```
@@ -144,7 +144,7 @@ kubectl get nodes # 출력은 EKS Managed Node group 노드를 표시합니다
 
 **클러스터가 로컬에서 구성되었는지 확인**
 ```bash
-aws eks --region us-west-2 update-kubeconfig --name trainium-inferentia
+aws eks --region eu-west-2 update-kubeconfig --name trainium-inferentia
 ```
 
 **RayServe 클러스터 배포**
@@ -185,7 +185,7 @@ service/llama3           ClusterIP   172.20.246.48   <none>       8000:32138/TCP
 $ kubectl get ingress -n llama3
 
 NAME             CLASS   HOSTS   ADDRESS                                                                         PORTS   AGE
-llama3           nginx   *       k8s-ingressn-ingressn-randomid-randomid.elb.us-west-2.amazonaws.com             80      2m4s
+llama3           nginx   *       k8s-ingressn-ingressn-randomid-randomid.elb.eu-west-2.amazonaws.com             80      2m4s
 
 ```
 

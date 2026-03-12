@@ -182,7 +182,7 @@ Please ensure that you have the necessary permissions to perform this operation.
 During your Terraform installation or redeployment, you might encounter an error saying: `AlreadyExistsException: An alias with the name ...` already exists. This happens when the KMS alias you're trying to create already exists in your AWS account.
 
 ```
-│ Error: creating KMS Alias (alias/eks/trainium-inferentia): AlreadyExistsException: An alias with the name arn:aws:kms:us-west-2:23423434:alias/eks/trainium-inferentia already exists
+│ Error: creating KMS Alias (alias/eks/trainium-inferentia): AlreadyExistsException: An alias with the name arn:aws:kms:eu-west-2:23423434:alias/eks/trainium-inferentia already exists
 │
 │   with module.eks.module.kms.aws_kms_alias.this["cluster"],
 │   on .terraform/modules/eks.kms/main.tf line 452, in resource "aws_kms_alias" "this":

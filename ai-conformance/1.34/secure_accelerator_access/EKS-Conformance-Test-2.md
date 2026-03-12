@@ -38,8 +38,8 @@ Running Suite: Kubernetes e2e suite - /Users/xxx/kubernetes/test/e2econtainers'
   STEP: Waiting for a default service account to be provisioned in namespace @ 10/10/25 16:34:13.323
   STEP: Waiting for kube-root-ca.crt to be provisioned in namespace @ 10/10/25 16:34:13.411
   STEP: selecting nodes @ 10/10/25 16:34:13.502
-  I1010 16:34:13.550318 9569 deploy.go:142] testing on nodes [ip-192-168-38-195.us-west-2.compute.internal]
-  STEP: deploying driver dra-3728.k8s.io on nodes [ip-192-168-38-195.us-west-2.compute.internal] @ 10/10/25 16:34:13.55
+  I1010 16:34:13.550318 9569 deploy.go:142] testing on nodes [ip-192-168-38-195.eu-west-2.compute.internal]
+  STEP: deploying driver dra-3728.k8s.io on nodes [ip-192-168-38-195.eu-west-2.compute.internal] @ 10/10/25 16:34:13.55
   I1010 16:34:13.596944    9569 deploy.go:154] "Listed ResourceClaims" logger="ResourceClaimListWatch" resourceAPI="V1" numClaims=0 listMeta={"resourceVersion":"14302"}
   I1010 16:34:13.642150    9569 deploy.go:163] "Started watching ResourceClaims" logger="ResourceClaimListWatch" resourceAPI="V1"
   I1010 16:34:13.953068 9569 create.go:156] creating *v1.ReplicaSet: dra-3728/dra-test-driver
@@ -54,7 +54,7 @@ Running Suite: Kubernetes e2e suite - /Users/xxx/kubernetes/test/e2econtainers'
   STEP: deleting *v1.ResourceClaim dra-3728/all @ 10/10/25 16:34:31.85
   STEP: deleting *v1.ResourceClaim dra-3728/container0 @ 10/10/25 16:34:31.903
   STEP: deleting *v1.ResourceClaim dra-3728/container1 @ 10/10/25 16:34:31.956
-  STEP: waiting for resources on ip-192-168-38-195.us-west-2.compute.internal to be unprepared @ 10/10/25 16:34:32.011
+  STEP: waiting for resources on ip-192-168-38-195.eu-west-2.compute.internal to be unprepared @ 10/10/25 16:34:32.011
   STEP: waiting for claims to be deallocated and deleted @ 10/10/25 16:34:32.012
   STEP: scaling down driver proxy pods for dra-3728.k8s.io @ 10/10/25 16:34:32.646
   STEP: Waiting for ResourceSlices of driver dra-3728.k8s.io to be removed... @ 10/10/25 16:34:33.175

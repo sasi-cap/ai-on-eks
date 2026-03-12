@@ -64,7 +64,7 @@ cd ai-on-eks/infra/bionemo
 
 #### 설치 스크립트 실행
 
-제공된 헬퍼 스크립트 `install.sh`를 사용하여 terraform init 및 apply 명령을 실행합니다. 기본적으로 스크립트는 EKS 클러스터를 `us-west-2` 리전에 배포합니다. 리전을 변경하려면 `blueprint.tfvars`를 업데이트하세요. 이 시점에 다른 입력 변수를 업데이트하거나 terraform 템플릿에 다른 변경을 가할 수도 있습니다.
+제공된 헬퍼 스크립트 `install.sh`를 사용하여 terraform init 및 apply 명령을 실행합니다. 기본적으로 스크립트는 EKS 클러스터를 `eu-west-2` 리전에 배포합니다. 리전을 변경하려면 `blueprint.tfvars`를 업데이트하세요. 이 시점에 다른 입력 변수를 업데이트하거나 terraform 템플릿에 다른 변경을 가할 수도 있습니다.
 
 
 ```bash

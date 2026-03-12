@@ -1,7 +1,7 @@
 name                     = "emr-spark-rapids"
 enable_amazon_prometheus = true
 enable_amazon_emr        = true
-# region                   = "us-west-2"
+# region                   = "eu-west-2"
 # eks_cluster_version      = "1.34"
 
 # -------------------------------------------------------------------------------------

@@ -32,7 +32,7 @@ status:
       - adminAccess: null
         device: gpu-0
         driver: gpu.nvidia.com
-        pool: ip-10-226-2-193.us-west-2.compute.internal
+        pool: ip-10-226-2-193.eu-west-2.compute.internal
         request: gpu
     nodeSelector:
       nodeSelectorTerms:
@@ -40,7 +40,7 @@ status:
         - key: metadata.name
           operator: In
           values:
-          - ip-10-226-2-193.us-west-2.compute.internal
+          - ip-10-226-2-193.eu-west-2.compute.internal
   reservedFor:
   - name: gpu-deployment-78df9479c4-dw6nb
     resource: pods

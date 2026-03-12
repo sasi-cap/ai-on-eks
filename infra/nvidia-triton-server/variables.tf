@@ -4,10 +4,10 @@ variable "name" {
   type        = string
 }
 
-# NOTE: Trainium and Inferentia are only available in us-west-2 and us-east-1 regions
+# NOTE: Trainium and Inferentia are only available in eu-west-2 and us-east-1 regions
 variable "region" {
   description = "region"
-  default     = "us-west-2"
+  default     = "eu-west-2"
   type        = string
 }
 

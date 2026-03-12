@@ -170,7 +170,7 @@ Deployment takes approximately 20 minutes.
 ### Validate the Deployment
 
 ```bash
-aws eks update-kubeconfig --name aioeks-agents --region us-west-2
+aws eks update-kubeconfig --name aioeks-agents --region eu-west-2
 kubectl get pods -A
 ```
 
@@ -218,7 +218,7 @@ kubectl port-forward svc/argocd-server 8080:443 -n argocd
 | Variable                      | Description                               | Default         |
 |-------------------------------|-------------------------------------------|-----------------|
 | `name`                        | Cluster naming prefix                     | `aioeks-agents` |
-| `region`                      | AWS region                                | `us-west-2`     |
+| `region`                      | AWS region                                | `eu-west-2`     |
 | `eks_cluster_version`         | EKS version                               | `1.34`          |
 | `acm_certificate_domain`      | Domain for TLS                            | `""` (required) |
 | `allowed_inbound_cidrs`       | CIDR ranges allowed through load balancer | `0.0.0.0/0`     |
@@ -274,7 +274,7 @@ kubectl logs -n external-dns -l app.kubernetes.io/name=external-dns
 ### Certificate Issues
 
 ```bash
-aws acm list-certificates --region us-west-2
+aws acm list-certificates --region eu-west-2
 ```
 
 ## Cleanup

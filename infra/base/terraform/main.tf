@@ -1,5 +1,12 @@
 provider "aws" {
   region = local.region
+
+  assume_role {
+    # The ARN of the role in the target account to assume
+    role_arn     = "arn:aws:iam::888740700120:role/test-role"
+    session_name = "terraform-session"
+    # Optional: external_id = "your-external-id"
+  }
 }
 
 provider "kubernetes" {

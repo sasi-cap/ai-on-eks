@@ -5,9 +5,9 @@ enable_aibrix_stack              = true
 enable_leader_worker_set         = true
 solution_description             = "Guidance for Automated Deployment of Inference ready Amazon EKS Clusters"
 solution_id                      = "SO9615"
-availability_zones_count         = 4
+availability_zones_count         = 3
 enable_soci_snapshotter          = true
-# region                           = "us-west-2"
+# region                           = "eu-west-2"
 # eks_cluster_version              = "1.34"
 
 # -------------------------------------------------------------------------------------

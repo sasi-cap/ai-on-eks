@@ -121,7 +121,7 @@ Before deploying the infrastructure, ensure you have:
 
 The infrastructure creates an EKS cluster with:
 - **Cluster Version**: Configurable (default: latest supported)
-- **Region**: Configurable (default: us-west-2)
+- **Region**: Configurable (default: eu-west-2)
 - **VPC**: Automatically provisioned with public and private subnets
 - **Node Groups**: Managed by Karpenter for dynamic GPU provisioning
 
@@ -160,7 +160,7 @@ Edit `terraform/blueprint.tfvars` to customize your deployment:
 
 ```hcl
 name          = "nvidia-deep-research"
-region        = "us-west-2"              # Your AWS region
+region        = "eu-west-2"              # Your AWS region
 
 # Enable/disable P4 (A100) and P5 (H100) GPU instances
 enable_p4_karpenter = true
@@ -327,7 +327,7 @@ Configure kubectl to access your EKS cluster:
 ```bash
 # Set your cluster details
 export CLUSTER_NAME="nvidia-deep-research"  # Or your cluster name
-export REGION="us-west-2"                   # Or your region
+export REGION="eu-west-2"                   # Or your region
 
 # Configure kubectl
 aws eks update-kubeconfig --region $REGION --name $CLUSTER_NAME

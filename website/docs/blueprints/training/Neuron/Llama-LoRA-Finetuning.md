@@ -113,7 +113,7 @@ export HUGGINGFACE_HUB_ACCESS_TOKEN=$(echo -n "your_huggingface_hub_access_token
 
 Deploy the Secret and fine-tuning Job resources by running the following command, which automatically substitutes HUGGINGFACE_HUB_ACCESS_TOKEN environment variable in the yaml before applying the resources to your Kubernetes cluster.
 
-**Note:** The fine-tuning container image is fetched from the `us-west-2` ECR repository. Review the [HuggingFace website](https://huggingface.co/docs/optimum-neuron/en/containers) for additional guidance to check if it provides another region that you prefer based on the region you selected above for running this particular fine-tuning example. If you choose a different supported region, update the AWS account ID and region in the container image URL in the lora-finetune-resources.yaml file before running the below command.
+**Note:** The fine-tuning container image is fetched from the `eu-west-2` ECR repository. Review the [HuggingFace website](https://huggingface.co/docs/optimum-neuron/en/containers) for additional guidance to check if it provides another region that you prefer based on the region you selected above for running this particular fine-tuning example. If you choose a different supported region, update the AWS account ID and region in the container image URL in the lora-finetune-resources.yaml file before running the below command.
 
 ```bash
 envsubst < lora-finetune-resources.yaml | kubectl apply -f -

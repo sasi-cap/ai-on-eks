@@ -114,7 +114,7 @@ export HUGGINGFACE_HUB_ACCESS_TOKEN=$(echo -n "your_huggingface_hub_access_token
 
 다음 명령을 실행하여 Secret과 파인튜닝 Job 리소스를 배포합니다. 이 명령은 yaml을 Kubernetes 클러스터에 적용하기 전에 HUGGINGFACE_HUB_ACCESS_TOKEN 환경 변수를 자동으로 치환합니다.
 
-**참고:** 파인튜닝 컨테이너 이미지는 `us-west-2` ECR 저장소에서 가져옵니다. 이 파인튜닝 예제를 실행하기 위해 선택한 리전에 따라 다른 선호 리전을 제공하는지 확인하려면 [HuggingFace 웹사이트](https://huggingface.co/docs/optimum-neuron/en/containers)를 검토하세요. 다른 지원 리전을 선택하는 경우 아래 명령을 실행하기 전에 lora-finetune-resources.yaml 파일의 컨테이너 이미지 URL에서 AWS 계정 ID와 리전을 업데이트하세요.
+**참고:** 파인튜닝 컨테이너 이미지는 `eu-west-2` ECR 저장소에서 가져옵니다. 이 파인튜닝 예제를 실행하기 위해 선택한 리전에 따라 다른 선호 리전을 제공하는지 확인하려면 [HuggingFace 웹사이트](https://huggingface.co/docs/optimum-neuron/en/containers)를 검토하세요. 다른 지원 리전을 선택하는 경우 아래 명령을 실행하기 전에 lora-finetune-resources.yaml 파일의 컨테이너 이미지 URL에서 AWS 계정 ID와 리전을 업데이트하세요.
 
 ```bash
 envsubst < lora-finetune-resources.yaml | kubectl apply -f -
